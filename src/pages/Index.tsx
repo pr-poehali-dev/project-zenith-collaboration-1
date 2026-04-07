@@ -1,10 +1,11 @@
 import { StarField } from "@/components/StarField"
-import { ChevronDown, Linkedin, Users, LineChart, Clock, Lightbulb, BotIcon as Robot } from "lucide-react"
+import { ChevronDown, Linkedin } from "lucide-react"
 import { ContactForm } from "@/components/ContactForm"
 import { ChatbotModal } from "@/components/ChatbotModal"
 import { useState, useEffect, useRef } from "react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import Icon from "@/components/ui/icon"
 
 export default function Index() {
   const [isHeadingVisible, setIsHeadingVisible] = useState(false)
@@ -241,13 +242,13 @@ export default function Index() {
               }}
             >
               <h1 className="text-4xl font-bold text-white md:text-6xl font-heading">
-                Nebula Ventures{" "}
-                <span role="img" aria-label="rocket">
-                  🚀
+                Путь к себе{" "}
+                <span role="img" aria-label="star">
+                  ✨
                 </span>
               </h1>
               <p className="mt-4 text-lg text-gray-300 md:text-xl px-4 max-w-xs mx-auto md:max-w-none">
-                Экспертиза в области ИИ и технологий
+                Коучинг и системные расстановки — глубокая работа с вашей жизнью
               </p>
               <Button
                 onClick={scrollToAbout}
@@ -255,7 +256,7 @@ export default function Index() {
                 size="sm"
                 className="mt-6 bg-transparent text-white border-white hover:bg-white hover:text-black transition-colors"
               >
-                О нас
+                Узнать больше
               </Button>
             </div>
           </div>
@@ -295,19 +296,19 @@ export default function Index() {
                 />
               </div>
               <div className="space-y-4 text-center md:text-left px-4 md:px-0">
-                <h2 className="text-3xl font-bold font-heading">О нас</h2>
+                <h2 className="text-3xl font-bold font-heading">Обо мне</h2>
                 <div className="space-y-4 max-w-2xl">
                   <p className="text-gray-300">
-                    Мы помогаем компаниям использовать передовые технологии, чтобы радовать клиентов
-                    и оптимизировать бизнес-процессы.
+                    Я — коуч и системный расстановщик. Помогаю людям находить ответы внутри себя,
+                    выходить из повторяющихся сценариев и строить жизнь, которая ощущается своей.
                   </p>
                   <p className="text-gray-300">
-                    Стратегическое планирование, техническое лидерство или практическая поддержка разработки —
-                    мы поможем создать правильные решения для вашего бизнеса.
+                    Системные расстановки позволяют увидеть скрытые динамики в семье, отношениях и
+                    бизнесе — то, что слова не всегда могут передать.
                   </p>
                   <p className="text-gray-300">
-                    Наша команда имеет более 10 лет опыта создания сложных технических продуктов
-                    для стартапов и крупных компаний. Свяжитесь с нами или попробуйте ИИ-ассистента.
+                    В коучинге я создаю пространство, где вы можете честно посмотреть на свою жизнь
+                    и сделать осознанный следующий шаг.
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3 pt-4 justify-center md:justify-start">
@@ -316,18 +317,18 @@ export default function Index() {
                       onClick={scrollToContact}
                       variant="outline"
                       size="sm"
-                      className="bg-transparent text-white border-white hover:bg-white hover:text-black transition-colors w-[140px] mx-auto sm:mx-0"
+                      className="bg-transparent text-white border-white hover:bg-white hover:text-black transition-colors w-[160px] mx-auto sm:mx-0"
                     >
-                      Связаться
+                      Записаться
                     </Button>
                     <Button
                       onClick={openChatbot}
                       variant="outline"
                       size="sm"
-                      className="bg-transparent text-white border-white hover:bg-white hover:text-black transition-colors w-[140px] mx-auto sm:mx-0 flex items-center justify-center"
+                      className="bg-transparent text-white border-white hover:bg-white hover:text-black transition-colors w-[160px] mx-auto sm:mx-0 flex items-center justify-center"
                     >
-                      <Robot className="mr-1 h-4 w-4" />
-                      ИИ-чат
+                      <Icon name="MessageCircle" size={16} className="mr-1" />
+                      Задать вопрос
                     </Button>
                   </div>
                 </div>
@@ -346,7 +347,7 @@ export default function Index() {
               isServicesTitleVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10",
             )}
           >
-            Услуги
+            Как я могу помочь
           </h2>
           <div
             ref={servicesContentRef}
@@ -356,46 +357,47 @@ export default function Index() {
             )}
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Fractional CPO */}
               <div className="bg-gray-800 rounded-lg p-6 transition-all duration-300 hover:bg-gray-700">
                 <div className="flex items-center mb-4">
-                  <Users className="h-7 w-7 text-white mr-4" aria-hidden="true" />
-                  <h3 className="text-xl font-semibold font-heading">CPO / CTO на аутсорсе</h3>
+                  <Icon name="Heart" size={28} className="text-white mr-4" />
+                  <h3 className="text-xl font-semibold font-heading">Индивидуальный коучинг</h3>
                 </div>
                 <p className="text-gray-300">
-                  Продуктовое лидерство, выстраивание процессов, развитие команды, технологическая стратегия.
+                  Личные сессии, направленные на ваши цели, ценности и жизненные изменения.
+                  Работаем с тем, что действительно важно для вас.
                 </p>
               </div>
 
-              {/* Product Consulting */}
               <div className="bg-gray-800 rounded-lg p-6 transition-all duration-300 hover:bg-gray-700">
                 <div className="flex items-center mb-4">
-                  <LineChart className="h-7 w-7 text-white mr-4" aria-hidden="true" />
-                  <h3 className="text-xl font-semibold font-heading">Продуктовый консалтинг</h3>
+                  <Icon name="Compass" size={28} className="text-white mr-4" />
+                  <h3 className="text-xl font-semibold font-heading">Системные расстановки</h3>
                 </div>
                 <p className="text-gray-300">
-                  Разработка роадмапа, поиск и валидация product-market fit, оценка кандидатов.
+                  Метод, позволяющий увидеть и изменить скрытые семейные и организационные динамики,
+                  которые влияют на вашу жизнь.
                 </p>
               </div>
 
-              {/* Interim Leadership */}
               <div className="bg-gray-800 rounded-lg p-6 transition-all duration-300 hover:bg-gray-700">
                 <div className="flex items-center mb-4">
-                  <Clock className="h-7 w-7 text-white mr-4" aria-hidden="true" />
-                  <h3 className="text-xl font-semibold font-heading">Временное руководство</h3>
-                </div>
-                <p className="text-gray-300">Временный CPO или VP of Product для компаний в период трансформации.</p>
-              </div>
-
-              {/* Workshops & Advisory */}
-              <div className="bg-gray-800 rounded-lg p-6 transition-all duration-300 hover:bg-gray-700">
-                <div className="flex items-center mb-4">
-                  <Lightbulb className="h-7 w-7 text-white mr-4" aria-hidden="true" />
-                  <h3 className="text-xl font-semibold font-heading">Разработка продуктов</h3>
+                  <Icon name="Users" size={28} className="text-white mr-4" />
+                  <h3 className="text-xl font-semibold font-heading">Групповые сессии</h3>
                 </div>
                 <p className="text-gray-300">
-                  Быстрое прототипирование и запуск внутренних и внешних приложений и сайтов
-                  с использованием современных инструментов.
+                  Расстановки в группе — мощный формат, где участники поддерживают
+                  трансформацию друг друга в безопасном пространстве.
+                </p>
+              </div>
+
+              <div className="bg-gray-800 rounded-lg p-6 transition-all duration-300 hover:bg-gray-700">
+                <div className="flex items-center mb-4">
+                  <Icon name="Sparkles" size={28} className="text-white mr-4" />
+                  <h3 className="text-xl font-semibold font-heading">Работа с отношениями</h3>
+                </div>
+                <p className="text-gray-300">
+                  Помогаю разобраться в сложных отношениях — с партнёром, родителями, детьми —
+                  и найти путь к гармонии и взаимопониманию.
                 </p>
               </div>
             </div>
@@ -412,7 +414,7 @@ export default function Index() {
               isHeadingVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10",
             )}
           >
-            Давайте создавать
+            Записаться на консультацию
           </h2>
           <ContactForm />
         </div>
